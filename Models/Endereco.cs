@@ -26,5 +26,10 @@ namespace SistemaBiblioteca.Models
         [Column("LOGRADOURO")]
         public string Logradouro { get; set; }
 
+        [DisplayName("Pessoa")]
+        [Column("ID_PESSOA")]
+        public Pessoa Pessoa { get; set; }
+
+
     }
 }

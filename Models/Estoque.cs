@@ -15,8 +15,8 @@ namespace SistemaBiblioteca.Models
         public int Quantidade { get; set; }
 
         [DisplayName("LIVROS")]
-        [Column("FK_ESTOQUE_LIVRO_ID")]
-        public Livros Livro { get; set; }
+        [Column("ID_LIVRO")]
+        public List<Livros> Livro { get; set; }
 
     }
 }

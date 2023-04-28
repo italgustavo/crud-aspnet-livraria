@@ -30,5 +30,8 @@ namespace SistemaBiblioteca.Models
         [Column("DATALANCAMENTO")]
         public DateTime DataLancamento { get; set; }
 
+        [DisplayName("ID Estoque")]
+        [Column("ID_ESTOQUE")]
+        public Estoque Estoque { get; set; }
     }
 }

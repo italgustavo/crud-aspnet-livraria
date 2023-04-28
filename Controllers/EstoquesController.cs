@@ -12,9 +12,9 @@ namespace SistemaBiblioteca.Controllers
 {
     public class EstoquesController : Controller
     {
-        private readonly ApplicatinDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public EstoquesController(ApplicatinDbContext context)
+        public EstoquesController(ApplicationDbContext context)
         {
             _context = context;
         }

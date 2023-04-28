@@ -20,7 +20,7 @@ namespace SistemaBiblioteca.Models
         public string Nome { get; set; }
 
         [DisplayName("Data de nascimento")]
-        [Column("DATANASCIMENTO")] //Arrumar nome para DATA_NASCIMENTO
+        [Column("DATANASCIMENTO")] 
         public DateTime DataNascimento { get; set; }
 
         [DisplayName("Telefone")]
@@ -28,7 +28,7 @@ namespace SistemaBiblioteca.Models
         public string Telefone { get; set; }
 
         [DisplayName("Endereço")]
-        [Column("FK_PESSOA_ENDERECO_ID")]
+        [Column("ID_ENDERECO")]
         public Endereco Endereco { get; set; }
 
     }

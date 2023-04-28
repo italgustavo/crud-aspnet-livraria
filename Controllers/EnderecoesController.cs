@@ -12,9 +12,9 @@ namespace SistemaBiblioteca.Controllers
 {
     public class EnderecoesController : Controller
     {
-        private readonly ApplicatinDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public EnderecoesController(ApplicatinDbContext context)
+        public EnderecoesController(ApplicationDbContext context)
         {
             _context = context;
         }

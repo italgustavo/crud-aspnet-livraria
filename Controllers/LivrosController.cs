@@ -12,9 +12,9 @@ namespace SistemaBiblioteca.Controllers
 {
     public class LivrosController : Controller
     {
-        private readonly ApplicatinDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public LivrosController(ApplicatinDbContext context)
+        public LivrosController(ApplicationDbContext context)
         {
             _context = context;
         }

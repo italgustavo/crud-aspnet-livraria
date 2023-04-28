@@ -12,9 +12,9 @@ namespace SistemaBiblioteca.Controllers
 {
     public class PedidosController : Controller
     {
-        private readonly ApplicatinDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public PedidosController(ApplicatinDbContext context)
+        public PedidosController(ApplicationDbContext context)
         {
             _context = context;
         }

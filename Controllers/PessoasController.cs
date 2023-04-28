@@ -12,9 +12,9 @@ namespace SistemaBiblioteca.Controllers
 {
     public class PessoasController : Controller
     {
-        private readonly ApplicatinDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public PessoasController(ApplicatinDbContext context)
+        public PessoasController(ApplicationDbContext context)
         {
             _context = context;
         }

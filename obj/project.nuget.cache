@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "1E0jM+hfEWQjaAbHQHlmxBz4xLUnyYMW1zXAD29gevvy51JVybkXupFbzMmkKm7V/rX2s/B7sh4CLdP3KM8h4w==",
+  "dgSpecHash": "xT7BK8gcIDy7EJuUbecm0NFksVCHmImyEj4N/rY0bvhFCYc8ZZsGlnIjXVJQkonquQavzR5OVYRzmAi6o0U2ew==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\ASPNET\\Sistema_Biblioteca\\SistemaBiblioteca\\SistemaBiblioteca\\SistemaBiblioteca.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\italg\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\italg\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\italg\\.nuget\\packages\\bootstrap\\5.2.3\\bootstrap.5.2.3.nupkg.sha512",
     "C:\\Users\\italg\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\italg\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",
     "C:\\Users\\italg\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
