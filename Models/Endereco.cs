@@ -28,7 +28,7 @@ namespace SistemaBiblioteca.Models
 
         [DisplayName("Pessoa")]
         [Column("ID_PESSOA")]
-        public Pessoa Pessoa { get; set; }
+        public Pessoa Pessoa{ get; set; }
 
 
     }

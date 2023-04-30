@@ -25,11 +25,11 @@ namespace SistemaBiblioteca.Models
 
         [DisplayName("Telefone")]
         [Column("TELEFONE")]
-        public string Telefone { get; set; }
+        public string Telefone { get; set; 
+        }
 
-        [DisplayName("Endereço")]
+        [DisplayName("Telefone")]
         [Column("ID_ENDERECO")]
         public Endereco Endereco { get; set; }
-
     }
 }

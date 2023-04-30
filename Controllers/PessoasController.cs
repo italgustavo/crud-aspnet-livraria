@@ -24,7 +24,7 @@ namespace SistemaBiblioteca.Controllers
         {
               return _context.Pessaos != null ? 
                           View(await _context.Pessaos.ToListAsync()) :
-                          Problem("Entity set 'ApplicatinDbContext.Pessaos'  is null.");
+                          Problem("Entity set 'ApplicationDbContext.Pessaos'  is null.");
         }
 
         // GET: Pessoas/Details/5
@@ -58,7 +58,7 @@ namespace SistemaBiblioteca.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Cpf,Nome,DataNascimento,Telefone")] Pessoa pessoa)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(pessoa);
                 await _context.SaveChangesAsync();
@@ -95,7 +95,7 @@ namespace SistemaBiblioteca.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
@@ -143,7 +143,7 @@ namespace SistemaBiblioteca.Controllers
         {
             if (_context.Pessaos == null)
             {
-                return Problem("Entity set 'ApplicatinDbContext.Pessaos'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Pessaos'  is null.");
             }
             var pessoa = await _context.Pessaos.FindAsync(id);
             if (pessoa != null)
