@@ -31,13 +31,21 @@ Este é um projeto CRUD em ASP.NET para gerenciar vendas de uma livraria, consum
 ![Livraria7](https://user-images.githubusercontent.com/55145973/235501459-5de82973-9a1b-4588-a97c-841642fa4a6c.jpg)
 
 ## Requisitos para execução do projeto
+
 Para executar o projeto, são necessários os seguintes pré-requisitos:
 
-## IDE Visual Studio instalada
+IDE Visual Studio instalada
+
 Banco de dados SQL Server instalado
+
 .NET Framework instalado
-Como executar o projeto
+
+## Como executar o projeto
+
 Clone este repositório em sua máquina local
+
 Abra a solução do projeto no Visual Studio
+
 Configure a conexão com o banco de dados editando o arquivo appsettings.json
+
 Compile o projeto e execute-o no Visual Studio
