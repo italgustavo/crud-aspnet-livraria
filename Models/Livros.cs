@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaBiblioteca.Models
 {
-    [Table("LIVROS")]
+    [Table("LIVRO")]
     public class Livros
     {
         [DisplayName("Codigo")]
@@ -15,7 +15,7 @@ namespace SistemaBiblioteca.Models
         public string Name { get; set; }
 
         [DisplayName("Nome do autor")]
-        [Column("NOMEAUTOR")]
+        [Column("NOME_AUTOR")]
         public string NomeAutor { get; set; }
 
         [DisplayName("Nome Editora")]
@@ -23,15 +23,13 @@ namespace SistemaBiblioteca.Models
         public string Editora { get; set; }
 
         [DisplayName("Data compra")]
-        [Column("DATACOMRPA")]
+        [Column("DATA_COMPRA")]
         public DateTime DataCompra { get; set; }
 
-        [DisplayName("Data de lançamento")]
-        [Column("DATALANCAMENTO")]
-        public DateTime DataLancamento { get; set; }
-
-        [DisplayName("ID Estoque")]
+        [DisplayName("Estoque")]
         [Column("ID_ESTOQUE")]
+        public int IdEstoque { get; set; }
+
         public Estoque Estoque { get; set; }
     }
 }

@@ -22,9 +22,8 @@ namespace SistemaBiblioteca.Controllers
         // GET: Livros
         public async Task<IActionResult> Index()
         {
-              return _context.Livros != null ? 
-                          View(await _context.Livros.ToListAsync()) :
-                          Problem("Entity set 'ApplicatinDbContext.Livros'  is null.");
+            var applicationDbContext = _context.Livros.Include(l => l.Estoque);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Livros/Details/5
@@ -36,6 +35,7 @@ namespace SistemaBiblioteca.Controllers
             }
 
             var livros = await _context.Livros
+                .Include(l => l.Estoque)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (livros == null)
             {
@@ -48,6 +48,7 @@ namespace SistemaBiblioteca.Controllers
         // GET: Livros/Create
         public IActionResult Create()
         {
+            ViewData["IdEstoque"] = new SelectList(_context.Estoques, "Id", "Id");
             return View();
         }
 
@@ -56,14 +57,15 @@ namespace SistemaBiblioteca.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,NomeAutor,Editora,DataCompra,DataLancamento")] Livros livros)
+        public async Task<IActionResult> Create([Bind("Id,Name,NomeAutor,Editora,DataCompra,IdEstoque")] Livros livros)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(livros);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdEstoque"] = new SelectList(_context.Estoques, "Id", "Id", livros.IdEstoque);
             return View(livros);
         }
 
@@ -80,6 +82,7 @@ namespace SistemaBiblioteca.Controllers
             {
                 return NotFound();
             }
+            ViewData["IdEstoque"] = new SelectList(_context.Estoques, "Id", "Id", livros.IdEstoque);
             return View(livros);
         }
 
@@ -88,14 +91,14 @@ namespace SistemaBiblioteca.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,NomeAutor,Editora,DataCompra,DataLancamento")] Livros livros)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,NomeAutor,Editora,DataCompra,IdEstoque")] Livros livros)
         {
             if (id != livros.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
@@ -115,6 +118,7 @@ namespace SistemaBiblioteca.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdEstoque"] = new SelectList(_context.Estoques, "Id", "Id", livros.IdEstoque);
             return View(livros);
         }
 
@@ -127,6 +131,7 @@ namespace SistemaBiblioteca.Controllers
             }
 
             var livros = await _context.Livros
+                .Include(l => l.Estoque)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (livros == null)
             {
@@ -143,7 +148,7 @@ namespace SistemaBiblioteca.Controllers
         {
             if (_context.Livros == null)
             {
-                return Problem("Entity set 'ApplicatinDbContext.Livros'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Livros'  is null.");
             }
             var livros = await _context.Livros.FindAsync(id);
             if (livros != null)

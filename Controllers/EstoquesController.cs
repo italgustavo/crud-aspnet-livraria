@@ -58,7 +58,7 @@ namespace SistemaBiblioteca.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Quantidade")] Estoque estoque)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(estoque);
                 await _context.SaveChangesAsync();
@@ -95,7 +95,7 @@ namespace SistemaBiblioteca.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {

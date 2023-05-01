@@ -23,10 +23,9 @@ namespace SistemaBiblioteca.Data
                 .HasForeignKey<Endereco>(e => e.Id);
 
             modelBuilder.Entity<Livros>()
-                .HasOne(p => p.Estoque)
+                .HasOne<Estoque>(p => p.Estoque)
                 .WithMany(e => e.Livro)
-                .HasForeignKey(e => e.Id);
-
+                .HasForeignKey(p => p.IdEstoque);
         }
 
     }
